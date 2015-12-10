@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplaform.org/xml/ns/kernel_1_0.xsd http://www.exoplaform.org/xml/ns/kernel_1_0.xsd"
+               xmlns="http://www.exoplaform.org/xml/ns/kernel_1_0.xsd">
+
+
+    <component>
+
+        <key>org.exoplatform.support.organization_service_membership_listener.MembershipListener</key>
+
+        <type>org.exoplatform.support.organization_service_membership_listener.MembershipListener</type>
+
+    </component>
+
+    <external-component-plugins>
+
+        <target-component>org.exoplatform.services.organization.OrganizationService</target-component>
+
+        <component-plugin>
+            <name>membership_mngt_listener</name>
+            <set-method>addListenerPlugin</set-method>
+            <type>org.exoplatform.support.organization_service_membership_listener.MembershipListener</type>
+            <description>membership event listener</description>
+        </component-plugin>
+
+    </external-component-plugins>
+
+</configuration>

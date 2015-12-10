@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.exoplaform.org/xml/ns/kernel_1_0.xsd http://www.exoplaform.org/xml/ns/kernel_1_0.xsd"
+               xmlns="http://www.exoplaform.org/xml/ns/kernel_1_0.xsd">
+
+    <component>
+
+        <key>org.exoplatform.support.SampleService</key>
+
+        <type>org.exoplatform.support.SampleService</type>
+
+    </component>
+
+    <component>
+
+
+        <type>org.exoplatform.support.JCRCrudService</type>
+
+    </component>
+
+    <component>
+
+
+        <type>org.exoplatform.support.JCRCrudServiceRest</type>
+
+    </component>
+
+
+
+    <component>
+        <type>org.exoplatform.services.scheduler.impl.QuartzSheduler</type>
+    </component>
+
+    <component>
+        <type>org.exoplatform.services.scheduler.QueueTasks</type>
+    </component>
+
+    <component>
+        <key>org.exoplatform.services.scheduler.JobSchedulerService</key>
+        <type>org.exoplatform.services.scheduler.impl.JobSchedulerServiceImpl</type>
+    </component>
+
+    <external-component-plugins>
+        <target-component>org.exoplatform.services.scheduler.JobSchedulerService</target-component>
+        <component-plugin>
+            <name>JCRCrudServiceJob</name>
+            <set-method>addPeriodJob</set-method>
+            <type>org.exoplatform.services.scheduler.PeriodJob</type>
+            <description>JCRCrudServiceJob</description>
+            <init-params>
+                <properties-param>
+                    <name>job.info</name>
+                    <description>JCRCrudServiceJob</description>
+                    <property name="jobName" value="JCRCrudServiceJob" />
+                    <property name="job" value="org.exoplatform.support.JCRCrudServiceJob" />
+                    <property name="repeatCount" value="0" />
+                    <property name="period" value="1000" />
+                    <property name="startTime" value="+45" />
+                    <property name="endTime" value="" />
+                </properties-param>
+            </init-params>
+        </component-plugin>
+    </external-component-plugins>
+
+    <external-component-plugins>
+        <target-component>org.exoplatform.services.organization.OrganizationService</target-component>
+        <component-plugin>
+            <name>my.new.user.event.listener</name>
+            <set-method>addListenerPlugin</set-method>
+            <type>org.exoplatform.support.OrganizationServiceListener</type>
+            <description>description</description>
+        </component-plugin>
+    </external-component-plugins>
+
+</configuration>

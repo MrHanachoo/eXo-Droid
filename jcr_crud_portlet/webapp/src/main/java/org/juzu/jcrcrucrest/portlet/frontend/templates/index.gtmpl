@@ -1,0 +1,44 @@
+<div class="uiBox exoInviteFriendBox">
+	<h6 class="title center">JCR Nodes crud rest service </h6>
+
+	<div class="uiContentBox">
+		<div id="juzExoInviteFriendContainer">
+			<div class="alert" id="JuzExoAddNodeAlertContainer" style="display: none;"></div>
+			<div class="clearfix">
+				<button class="btn btn-success btnSend" id="exo_add_node_button_id">add Node</button>
+				<div class="inputResize">
+					<input placeholder="Enter node name" type="text" id="exo_add_node_input_id" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="uiContentBox">
+    		<div id="juzExoInviteFriendContainer">
+    			<div class="alert" id="JuzExoAddNodeAlertContainer" style="display: none;"></div>
+    			<div class="clearfix">
+    				<button class="btn btn-warning btnSend" id="exo_update_node_button_id">update Node</button>
+    				<div class="inputResize">
+    					<input placeholder="Enter node name to update" type="text" id="exo_update_node_input_node_name_id" style="width: 33%;" />
+    					<input placeholder="propertyName" type="text" id="exo_update_node_input_property_name_id" style="width: 33%;" />
+    					<input placeholder="valueName" type="text" id="exo_update_node_input_property_value_id" style="width: 33%;" />
+    				</div>
+    			</div>
+    		</div>
+    </div>
+
+    <div class="uiContentBox">
+    		<div id="JuzExoDeleteNodeAlertContainer">
+    			<div class="alert" id="JuzExoAddNodeAlertContainer" style="display: none;"></div>
+    			<div class="clearfix">
+    				<button class="btn btn-danger btnSend" id="exo_delete_node_button_id">delete Node</button>
+    				<div class="inputResize">
+    					<input placeholder="Enter node name to delete " type="text" id="exo_delete_node_input_id" />
+    				</div>
+    			</div>
+    		</div>
+    </div>
+
+
+</div>

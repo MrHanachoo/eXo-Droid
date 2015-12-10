@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplaform.org/xml/ns/kernel_1_0.xsd http://www.exoplaform.org/xml/ns/kernel_1_0.xsd"
+               xmlns="http://www.exoplaform.org/xml/ns/kernel_1_0.xsd">
+
+    <external-component-plugins>
+        <target-component>org.exoplatform.services.scheduler.JobSchedulerService</target-component>
+        <component-plugin>
+            <name>MyJob</name>
+            <set-method>addPeriodJob</set-method>
+            <type>org.exoplatform.services.scheduler.PeriodJob</type>
+            <description>My Job</description>
+            <init-params>
+                <properties-param>
+                    <name>job.info</name>
+                    <description>DumbJob</description>
+                    <property name="jobName" value="MyJob" />
+                    <property name="groupName" value="MyGrp" />
+                    <property name="job" value="org.exoplatform.support.my_job.MyJob" />
+                    <property name="repeatCount" value="0" />
+                    <property name="period" value="6000" />
+                    <property name="startTime" value="+45" />
+                    <property name="endTime" value="" />
+                </properties-param>
+            </init-params>
+        </component-plugin>
+    </external-component-plugins>
+
+</configuration>
