@@ -1,1 +1,1 @@
-# myTraining
+# eXo Platform experiments
